@@ -1,0 +1,2 @@
+/usr/bin/ar qc libabsl_absl_dynamic_annotations.a  CMakeFiles/absl_dynamic_annotations.dir/dynamic_annotations.cc.o
+/usr/bin/ranlib libabsl_absl_dynamic_annotations.a

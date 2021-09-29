@@ -1,0 +1,2 @@
+/usr/bin/ar qc libabsl_absl_flags_registry.a  CMakeFiles/absl_flags_registry.dir/internal/registry.cc.o CMakeFiles/absl_flags_registry.dir/internal/type_erased.cc.o
+/usr/bin/ranlib libabsl_absl_flags_registry.a

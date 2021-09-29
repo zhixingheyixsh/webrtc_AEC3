@@ -1,0 +1,36 @@
+demo.cc:(.text+0xd21): undefined reference to `webrtc::HighPassFilter::Process(webrtc::AudioBuffer*, bool)'
+CMakeFiles/AEC3.dir/demo/demo.cc.o: In function `std::_MakeUniq<webrtc::HighPassFilter>::__single_object std::make_unique<webrtc::HighPassFilter, int&, int&>(int&, int&)':
+demo.cc:(.text._ZSt11make_uniqueIN6webrtc14HighPassFilterEJRiS2_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_[_ZSt11make_uniqueIN6webrtc14HighPassFilterEJRiS2_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_]+0x50): undefined reference to `webrtc::HighPassFilter::HighPassFilter(int, unsigned long)'
+CMakeFiles/AEC3.dir/demo/demo.cc.o: In function `std::default_delete<webrtc::HighPassFilter>::operator()(webrtc::HighPassFilter*) const':
+demo.cc:(.text._ZNKSt14default_deleteIN6webrtc14HighPassFilterEEclEPS1_[_ZNKSt14default_deleteIN6webrtc14HighPassFilterEEclEPS1_]+0x1e): undefined reference to `webrtc::HighPassFilter::~HighPassFilter()'
+audio_processing/libAudioProcess.a(audio_frame.cc.o): In function `webrtc::AudioFrame::UpdateFrame(unsigned int, short const*, unsigned long, int, webrtc::AudioFrame::SpeechType, webrtc::AudioFrame::VADActivity, unsigned long)':
+audio_frame.cc:(.text+0x1a0): undefined reference to `webrtc::GuessChannelLayout(int)'
+audio_frame.cc:(.text+0x1c3): undefined reference to `webrtc::ChannelLayoutToChannelCount(webrtc::ChannelLayout)'
+audio_processing/libAudioProcess.a(audio_frame.cc.o): In function `webrtc::AudioFrame::UpdateProfileTimeStamp()':
+audio_frame.cc:(.text+0x483): undefined reference to `rtc::TimeMillis()'
+audio_processing/libAudioProcess.a(audio_frame.cc.o): In function `rtc::TimeSince(long)':
+audio_frame.cc:(.text._ZN3rtc9TimeSinceEl[_ZN3rtc9TimeSinceEl]+0xd): undefined reference to `rtc::TimeMillis()'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::AudioBuffer(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)':
+audio_buffer.cc:(.text+0x8a4): undefined reference to `webrtc::PushSincResampler::PushSincResampler(unsigned long, unsigned long)'
+audio_buffer.cc:(.text+0x937): undefined reference to `webrtc::PushSincResampler::PushSincResampler(unsigned long, unsigned long)'
+audio_buffer.cc:(.text+0xa10): undefined reference to `webrtc::SplittingFilter::SplittingFilter(unsigned long, unsigned long, unsigned long)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::CopyFrom(float const* const*, webrtc::StreamConfig const&)':
+audio_buffer.cc:(.text+0x10d9): undefined reference to `webrtc::PushSincResampler::Resample(float const*, unsigned long, float*, unsigned long)'
+audio_buffer.cc:(.text+0x1217): undefined reference to `webrtc::PushSincResampler::Resample(float const*, unsigned long, float*, unsigned long)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::CopyTo(webrtc::StreamConfig const&, float* const*)':
+audio_buffer.cc:(.text+0x1507): undefined reference to `webrtc::PushSincResampler::Resample(float const*, unsigned long, float*, unsigned long)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::CopyTo(webrtc::AudioBuffer*) const':
+audio_buffer.cc:(.text+0x176d): undefined reference to `webrtc::PushSincResampler::Resample(float const*, unsigned long, float*, unsigned long)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::CopyFrom(webrtc::AudioFrame const*)':
+audio_buffer.cc:(.text+0x1cd4): undefined reference to `webrtc::PushSincResampler::Resample(float const*, unsigned long, float*, unsigned long)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o):audio_buffer.cc:(.text+0x1f42): more undefined references to `webrtc::PushSincResampler::Resample(float const*, unsigned long, float*, unsigned long)' follow
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::SplitIntoFrequencyBands()':
+audio_buffer.cc:(.text+0x2835): undefined reference to `webrtc::SplittingFilter::Analysis(webrtc::ChannelBuffer<float> const*, webrtc::ChannelBuffer<float>*)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `webrtc::AudioBuffer::MergeFrequencyBands()':
+audio_buffer.cc:(.text+0x28a1): undefined reference to `webrtc::SplittingFilter::Synthesis(webrtc::ChannelBuffer<float> const*, webrtc::ChannelBuffer<float>*)'
+audio_processing/libAudioProcess.a(audio_buffer.cc.o): In function `std::default_delete<webrtc::SplittingFilter>::operator()(webrtc::SplittingFilter*) const':
+audio_buffer.cc:(.text._ZNKSt14default_deleteIN6webrtc15SplittingFilterEEclEPS1_[_ZNKSt14default_deleteIN6webrtc15SplittingFilterEEclEPS1_]+0x1e): undefined reference to `webrtc::SplittingFilter::~SplittingFilter()'
+audio_processing/aec3/libaec3.a(echo_canceller3.cc.o): In function `webrtc::EchoCanceller3::RenderWriter::RenderWriter(webrtc::ApmDataDumper*, webrtc::SwapQueue<std::vector<std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >, std::allocator<std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > > >, webrtc::Aec3RenderQueueItemVerifier>*, unsigned long, unsigned long)':
+echo_canceller3.cc:(.text+0xe64): undefined reference to `webrtc::HighPassFilter::HighPassFilter(int, unsigned long)'
+echo_canceller3.cc:(.text+0xfed): undefined reference to `webrtc::HighPassFilter::~HighPassFilter()'
+audio_processing/aec3/libaec3.a(echo_canceller3.cc.o): In function `webrtc::EchoCanceller3::RenderWriter::~RenderWriter()'
