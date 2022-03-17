@@ -5,6 +5,7 @@
 // #define DCHECK_ALWAYS_ON
 #define RTC_DISABLE_CHECK_MSG
 
+#define NDEBUG
 /*********** aec dump ***********/
 #define WEBRTC_APM_DEBUG_DUMP 0
 

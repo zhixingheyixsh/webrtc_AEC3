@@ -1,4 +1,4 @@
-include_directories( ${PROJECT_SOURCE_DIR} aec2 include utility logging)
+include_directories( ${PROJECT_SOURCE_DIR} aec3 include utility logging)
 add_subdirectory(aec3)
 set (EXTRA_LIBS ${EXTRA_LIBS} aec3)
 add_library(AudioProcess
