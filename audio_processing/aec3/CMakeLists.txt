@@ -1,4 +1,3 @@
-
 include_directories(../ ./)
 set(SOURCE 
     adaptive_fir_filter.cc

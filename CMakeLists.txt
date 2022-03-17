@@ -8,14 +8,24 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 #set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_C_STANDARD 11)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -std=c++14 -O3 -fPIC -fopenmp -mcpu=cortex-a7 -ftree-vectorize -mfloat-abi=hard -mfpu=neon")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -fvisibility=hidden -fPIC -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -fPIC -pthread")
 #set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -std=c++14 -O3 -fPIC -fopenmp -mcpu=cortex-a7 -ftree-vectorize -mfloat-abi=hard -mfpu=neon")
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden -fPIC")
 #option(BUILD_STATIC_LIB "Building static lib" ON)
 
+
 if(NOT DEFINED SYSTEM_DETAILS)
   set(SYSTEM_DETAILS linux64)
 endif()
+set(CMAKE_SKIP_RPATH TRUE)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON) 
+set(CURRENT_CONFIG_FILE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+option(BUILD_STATIC_LIB "Building static lib" ON) 
+if(${CMAKE_BUILD_TYPE} STREQUAL debug)
+  set(BUILD_STATIC_LIB OFF)
+  add_definitions(-DDEBUG)
+endif()
+
 add_definitions(-DWEBRTC_POSIX)
 
 # should we use our own math functions?

@@ -147,8 +147,8 @@ int main(int argc, char* argv[])
 
         aec_frame.UpdateFrame(0, nullptr, kLinearOutputRateHz / 100, kLinearOutputRateHz, AudioFrame::kNormalSpeech, AudioFrame::kVadActive, 1);
         aec_linear_audio->CopyTo(&aec_frame);
-        memcpy(aec_tmp, aec_frame.data(), 320);
-        wav_write_data(h_linear_out, aec_tmp, 320);
+        memcpy(aec_tmp, aec_frame.data(), bytes_per_frame);
+        wav_write_data(h_linear_out, aec_tmp, bytes_per_frame);
         bar.print_bar(current * 1.f / total);
     }
     std::cout << std::endl;

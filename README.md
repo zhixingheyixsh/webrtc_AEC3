@@ -15,6 +15,5 @@ you can build in linux like this:
 cd master dir: webrtc_aec3  
 bash run.sh  
 then you will create build dir  
-  
-run like this  
-./build/bin/AEC    
+cp build/bin/AEC .  
+./AEC  
