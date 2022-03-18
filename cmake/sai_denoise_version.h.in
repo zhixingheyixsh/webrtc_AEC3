@@ -1,0 +1,43 @@
+//
+// sai_denoise_version.h
+//
+
+#ifndef SAI_DENOISE_VERSION_H
+#define SAI_DENOISE_VERSION_H
+
+#ifndef ASSIGN_VERSION
+#define SAI_WORLD_VERSION 0
+#define SAI_MAJOR_VERSION 1
+#define SAI_MINOR_VERSION 0
+#endif
+
+#define DM_TO_STRING_HELPER(x) #x
+#define DM_TO_STRING(x) DM_TO_STRING_HELPER(x)
+#define SAI_DENOISE_VERSION_STRING DM_TO_STRING(SAI_WORLD_VERSION) "." \
+                             DM_TO_STRING(SAI_MAJOR_VERSION) "." \
+                             DM_TO_STRING(SAI_MINOR_VERSION)
+
+#define SAI_VERSION_AT_LEAST(x,y,z) (SAI_WORLD_VERSION>x || (SAI_WORLD_VERSION>=x && \
+                                      (SAI_MAJOR_VERSION>y || (SAI_MAJOR_VERSION>=y && \
+                                                                 SAI_MINOR_VERSION>=z))))
+#define SAI_VERSION_NEWER_THAN_ME(x,y,z) (x>SAI_WORLD_VERSION || (x>=SAI_WORLD_VERSION && \
+                                            (y>SAI_MAJOR_VERSION || (y>=SAI_MAJOR_VERSION && \
+                                                                    z>SAI_MINOR_VERSION))))
+
+#cmakedefine GIT_REVISION "@GIT_REVISION@"
+#cmakedefine COMPILE_TIMESTAMP "@COMPILE_TIMESTAMP@"
+#cmakedefine BUILD_PLATFORM "@BUILD_PLATFORM@"
+#cmakedefine MODULE_NAME @MODULE_NAME@
+
+#ifndef PROVISION_NAME
+#define PROVISION_NAME "sai-denoise"
+#endif
+#define _DEF_GIT_HASH(VER) const char *sai_denoise_git_hashnum__ = (#VER);
+#define DEF_GIT_HASH(VER) _DEF_GIT_HASH(VER)
+#define _DEF_VERSION(PRON, VER, TS, FNM, HST) const char *LIB_INFO_for_##PRON = "For "#FNM", ver: "#VER "(" SAI_DENOISE_VERSION_STRING "), compiled time:"#TS" at "#HST;
+#define DEF_VERSION(PRON, VER, TS, FNM, HST) _DEF_VERSION(PRON, VER, TS, FNM, HST)
+
+DEF_VERSION(MODULE_NAME, GIT_REVISION, COMPILE_TIMESTAMP, PROVISION_NAME, BUILD_PLATFORM);
+DEF_GIT_HASH(GIT_REVISION)
+
+#endif //SAI_DENOISE_VERSION_H
