@@ -18,4 +18,4 @@ then you will create build dir
 cp build/linux64/release/bin/AEC3 . 
 or  
 cp build/linux64/debug/bin/AEC3 .   
-./AEC  
+./AEC3  
